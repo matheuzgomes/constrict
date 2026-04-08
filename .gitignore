@@ -1,0 +1,21 @@
+# Nuitka build artifacts (HUGE, do not upload)
+*.build/
+*.dist/
+*.onefile-build/
+*.c
+*.so
+
+# Compiled binaries
+main.bin
+main.exe
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Your shell's local history file
+.constrict_history
+
+
+#vscode file
+.vscode/
