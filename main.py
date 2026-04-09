@@ -5,6 +5,7 @@ import os.path
 from functools import lru_cache
 from collections import deque
 from contextlib import redirect_stdout, redirect_stderr
+from typing import Callable
 
 def _get_shlex_split():
     import shlex
@@ -39,8 +40,8 @@ class ShellState:
         self.oldpwd: str | None = None
         self.cpwd: str | None = None
         self.history: deque[str] = deque(maxlen=100)
-        self.builtin_commands: dict[str, callable] = {}
-        self.redirection_standards: dict[str, callable] = {
+        self.builtin_commands: dict[str, Callable] = {}
+        self.redirection_standards: dict[str, Callable] = {
             "stdout": redirect_stdout,
             "stderr": redirect_stderr,
         }
@@ -54,7 +55,7 @@ class ShellState:
 
 
 class Completer:
-    def __init__(self, commands: dict[str, callable]):
+    def __init__(self, commands: dict[str, Callable]):
         self._commands = commands
         self._matches: list[str] = []
         self._executables: list[str] | None = None
@@ -256,7 +257,7 @@ class Resolver:
                 return tokens[:i], os.path.expanduser(tokens[i + 1]), mode, stream_name
         return tokens, None, None, None
 
-    def resolve_command(self, tokens: list[str]) -> tuple[str, list[str], callable | None]:
+    def resolve_command(self, tokens: list[str]) -> tuple[str, list[str], Callable | None]:
         return tokens[0], tokens[1:], self.state.builtin_commands.get(tokens[0])
 
 
