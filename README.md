@@ -23,7 +23,7 @@
 
 I started playing around with the idea of building a terminal in pure Python, but I quickly realized how easy it is to write Python code that eats up a ton of memory for no reason.
 
-`Constrict` is the result of me trying to squeeze the absolute maximum performance out of a Python interpreter. It ditched the standard, comfortable Python modules for the bare-metal C-level stuff. It sits at around **~13 MB of actual RAM**, which is pretty much the floor for anything using Python + GNU Readline.
+`Constrict` is the result of me trying to squeeze the absolute maximum performance out of a Python interpreter. It ditched the standard, comfortable Python modules for the bare-metal C-level stuff. It sits at around **~21 MB of actual RAM**, which is pretty much the floor for anything using Python + GNU Readline.
 
 ### What can it do?
 
