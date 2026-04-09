@@ -33,7 +33,7 @@ It handles the basics you'd expect from a basic shell:
 * **Command history** (buffers writes to disk so it doesn't spam your hard drive)
 * **Redirections** (`>`, `>>`, `1>`, `2>`, etc.)
 * **Built-ins** like `cd`, `echo`, `pwd`, `type`, and `history`
-* **Runs actual programs** — it's not just an echo chamber for built-ins. You can run `ls`, `grep`, `bat`, or whatever else is sitting in your `$PATH`.
+* **Runs actual programs** it's not just an echo chamber for built-ins. You can run `ls`, `grep`, `bat`, or whatever else is sitting in your `$PATH`.
 
 ### Running it
 
@@ -71,6 +71,6 @@ If you look at the source, it might look a bit weird. I intentionally avoided a 
 
 It's a bit pedantic, but it was a fun experiment in seeing how close to "C-speeds" you can get while still writing Python.
 
-**License:** MIT — do whatever you want with it.
+**License:** MIT do whatever you want with it.
 
 *PS: This is just for fun, don't think you'll be able to run this at work.*
